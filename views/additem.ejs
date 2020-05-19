@@ -1,0 +1,104 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> List item for rent
+        </h1>
+        <%- include ("./partials/messages") %>
+        <form action="/users/register" method="POST">
+          <div class="form-group">
+            <label for="Pname">Product Name</label>
+            <input
+              type="name"
+              id="Pname"
+              name="Pname"
+              class="form-control"
+              placeholder="Enter Product Name"
+              value="<%= typeof Pname != 'undefined' ? Pname : '' %>"
+            />
+          </div>
+          <div class="form-group">
+          <label for="GenericName">Generic Name</label>
+            <input
+              type="name"
+              id="GenericName"
+              name="GenericName"
+              class="form-control"
+              placeholder="Enter Generic Name"
+              value="<%= typeof GenericName != 'undefined' ? GenericName : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Category">Category</label>
+            <input
+              type="text"
+              id="Category"
+              name="Category"
+              class="form-control"
+              placeholder="Enter Category"
+              value="<%= typeof Category != 'undefined' ? Category : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Description">Description</label>
+            <input
+              type="text"
+              id="Description"
+              name="Description"
+              class="form-control"
+              placeholder="Enter a short description of the product"
+              value="<%= typeof Description != 'undefined' ? Description : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Specifications">Specification</label>
+            <input
+              type="text"
+              id="Specifications"
+              name="Specifications"
+              class="form-control"
+              placeholder="Enter specs"
+              value="<%= typeof Specifications != 'undefined' ? Specifications : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Price">Expected Price</label>
+            <input
+              type="number"
+              id="Price"
+              name="Price"
+              class="form-control"
+              placeholder="Enter rent expected per month"
+              value="<%= typeof Price != 'undefined' ? Price : '' %>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="img1">Image 1 link</label>
+            <input
+              type="text"
+              id="img1"
+              name="img1"
+              class="form-control"
+              placeholder="Enter the link for image"
+              value="<%= typeof img1 != 'undefined' ? img1 : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="img2">Image 2 link</label>
+            <input
+              type="text"
+              id="img2"
+              name="img2"
+              class="form-control"
+              placeholder="Enter the link for image"
+              value="<%= typeof img2 != 'undefined' ? img2 : '' %>"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
