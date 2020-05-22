@@ -1,6 +1,6 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
-
+var bodyParser = require("body-parser"); 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const flash = require('connect-flash');

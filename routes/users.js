@@ -183,5 +183,25 @@ router.post('/additem', (req, res) =>{
     
 });
 
+var obj = {};
+var Pname, GenericName, Category, Description, Specifications, Price, img1, img2;
+db.select().from('Product')
+    .where({
+       Category: "Electronics"
+    }).one()
+    .then(
+       function(select){
+         obj=select;
+                      Pname = obj["Pname"]; 
+                      GenericName = obj["GenericName"]; 
+                      Category = obj["Category"];
+                      Description = obj["Description"]; 
+                      Specifications = obj["Specifications"]; 
+                      Price = obj["Price"];
+                      img1 = obj["img1"];
+                      img2 = obj["img2"];
+       }
+    );
+router.get("/Displayitem", (req, res) => { res.render("Displayitem", {Pname:Pname, GenericName:GenericName, Category:Category, Description:Description, Specifications:Specifications, Price:Price, img1:img1, img2:img2}); });
 
 module.exports = router;
