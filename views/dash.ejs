@@ -30,11 +30,19 @@
 
           </div>
       </form> -->
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <form class="form-inline my-2 my-lg-0" action="/users/dash" method="POST">
+        <div class="form-group">
+          <input id="find"
+                 name="find" 
+                 class="form-control mr-sm-2" 
+                 type="text" 
+                 placeholder="Search" 
+                 value="<%= typeof find != 'undefined' ? find : '' %>" 
+          />
+        </div>   
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
       </form>
-      <h4 style="margin-right: 10px; "><%= name %></h4>
+      <h4 style="margin-right: 20px; "><%= name %></h4>
      <a href="/users/logout" class="btn btn-secondary">Logout</a>
 
     </div></div>   

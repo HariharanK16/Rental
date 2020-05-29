@@ -41,7 +41,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true
   }))
-
+  app.use(express.static('Images'));
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());

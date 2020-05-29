@@ -1,22 +1,19 @@
 <div class="card mb-3">
-    <h3 class="card-header"><%= Pname %></h3>
+    <h3 class="card-header"><%= obj.Pname %></h3>
     <div class="card-body">
-      <h5 class="card-title"><%= GenericName %></h5>
-      <h6 class="card-subtitle text-muted"><%= Price %></h6>
-    </div>
-    <img style="height: 200px; width: 50%; " src="<%= img1 %>" alt="Card image">
-    <img style="height: 200px; width: 50%; " src="<%= img2 %>" alt="Card image">
+      <h5 class="card-title"><%= obj.GenericName %></h5>
+      <h6 class="card-subtitle text-muted"><%= obj.Price %></h6>
+    </div><%= obj.img1 %>
+    <img style="height: 250px; width: 50%; " src="<%= obj.img1 %>" alt="Image cannot be found">
+    <br>
+    <img style="height: 250px; width: 50%; " src="<%= obj.img2 %>" alt="Image cannot be found">
     <div class="card-body">
-      <p class="card-text"><%= Description %></p>
+      <p class="card-text"><%= obj.Description %></p>
     </div>
     <div class="card-body">
-        <p class="card-text"><%= Specifications %></p>
+        <p class="card-text"><%= obj.Specifications %></p>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
+
     <div class="card-body">
       <a href="#" class="card-link">Card link</a>
       <a href="#" class="card-link">Another link</a>
@@ -33,4 +30,5 @@
       <a href="#" class="card-link">Card link</a>
       <a href="#" class="card-link">Another link</a>
     </div>
-  </div>
+  </div>>
+  

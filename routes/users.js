@@ -182,26 +182,31 @@ router.post('/additem', (req, res) =>{
       
     
 });
+var value;
+    router.get('/dash',(req,res) => res.render('dash'));
+    router.post('/dash', (req, res) =>{
+        const { find } = req.body;
+        if(!find ){
+            errors.push({ msg: 'Please fill something to search'});
+        }
+    
+            console.log(find);       
+            value=find;       
+    });
 
-var obj = {};
-var Pname, GenericName, Category, Description, Specifications, Price, img1, img2;
-db.select().from('Product')
-    .where({
-       Category: "Electronics"
-    }).one()
-    .then(
-       function(select){
-         obj=select;
-                      Pname = obj["Pname"]; 
-                      GenericName = obj["GenericName"]; 
-                      Category = obj["Category"];
-                      Description = obj["Description"]; 
-                      Specifications = obj["Specifications"]; 
-                      Price = obj["Price"];
-                      img1 = obj["img1"];
-                      img2 = obj["img2"];
-       }
-    );
-router.get("/Displayitem", (req, res) => { res.render("Displayitem", {Pname:Pname, GenericName:GenericName, Category:Category, Description:Description, Specifications:Specifications, Price:Price, img1:img1, img2:img2}); });
+router.get("/Displayitem", function(req, res) { 
+    console.log(value);
+    var obj=db.select().from('Product')
+        .where({
+           Pname: value
+        }).one()
+        .then(
+           function(select){
+             obj=select;
+             res.render("Displayitem", {obj:obj});
+           }
+        );
+    });
+
 
 module.exports = router;
